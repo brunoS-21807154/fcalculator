@@ -5,7 +5,8 @@ import 'package:fcalculator/blocs/historyManager.dart';
 
 class Calculator {
   String _content;
-  final historyManager = HistoryManager();
+  HistoryManager historyManager = HistoryManager.getInstance();
+  DataSource dataSource = DataSource.getInstance();
 
   StreamController _controller = StreamController();
 
@@ -49,8 +50,6 @@ class Calculator {
   }
 
   void onEquals() {
-
-    DataSource dataSource = DataSource.getInstance();
 
     String operation = _content;
 

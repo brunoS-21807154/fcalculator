@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fcalculator/blocs/calculator.dart';
-import 'package:fcalculator/blocs/button.dart';
+import 'file:///C:/Users/poked/AndroidStudioProjects/fcalculator/lib/widgets/button.dart';
 
 class Keyboard extends StatelessWidget {
   final Calculator calculator;

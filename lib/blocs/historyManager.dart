@@ -4,6 +4,16 @@ import 'package:fcalculator/data/datasource.dart';
 
 class HistoryManager {
 
+  static HistoryManager _instance;
+
+  HistoryManager._internal();
+
+  static HistoryManager getInstance() {
+    if (_instance == null) {
+      _instance = HistoryManager._internal();
+    }
+    return _instance;
+  }
 
   List _content = [];
 
@@ -16,12 +26,10 @@ class HistoryManager {
   Stream get output => _controller.stream;
 
   void onGettingHistory() {
-    _content = dataSource.getAll();
 
-    _input.add(_content);
+    _input.add(dataSource.getAll());
 
     print(_content);
-
   }
 
   void dispose() => _controller.close();
